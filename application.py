@@ -43,7 +43,7 @@ if not os.environ.get("API_KEY"):
     raise RuntimeError("API_KEY not set")
     
 @app.route("/")
-@login_required
+#@login_required
 def index():
     """Homepage"""
-    return 
+    return render_template("index.html")
