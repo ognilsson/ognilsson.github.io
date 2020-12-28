@@ -1,0 +1,81 @@
+.blue {
+    color: blue;
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+.yellow {
+    color: yellow;
+}
+
+main {
+    background-color: rgba(68, 114, 148, 0.7);
+}
+
+
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+}
+
+main .form-control
+{
+    /* Center form controls */
+    display: inline-block;
+
+    /* Override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+main
+{
+    /* Scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* Center contents */
+    text-align: center;
+    margin-left: 250px;
+}
+
+main img
+{
+    /* Constrain images on small screens */
+    max-width: 100%;
+    background-color: black;
+}
+
+
+/* Sidebar styling*/
+.wrapper {
+    display: flex;
+    width: 100%;
+}
+
+#sidebar {
+    width: 250px;
+    position: fixed;
+    /*top: 0;*/
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+    background: #7386D5;
+    color: #fff;
+    transition: all 0.3s;
+    padding: 20px 20px 20px 20px;
+}
+
+.container {
+    margin-left: 250px;
+}
+
+.wrapper {
+    margin-left: 250px;
+    width: auto;
+}
