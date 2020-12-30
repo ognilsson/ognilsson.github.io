@@ -1,254 +1,383 @@
-{% extends "layout.html" %}
+<!DOCTYPE html>
+<html>
 
-{% block title %}
-    Resume – Oskar Nilsson
-{% endblock %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-{% block main %}
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid resume">
-            <h2>Oskar Nilsson</h2>
+    <title>Oskar – Resume</title>
 
-            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fas fa-align-justify"></i>
-            </button>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="static/style2.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#education">Education</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#work">Work Experience</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#athletics">Athletic Experience</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#additional">Additional</a>
-                    </li>
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <!-- Navbar Head -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark border" style='margin-bottom:0;'>  <!--fixed-top-->
+        <a class="navbar-brand" href="/" style='font-size: 1.8em;'>Online Portfolio – Oskar Nilsson</a>
+        <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav ml-auto mt-2">
+                    <li class="nav-item"><a class="nav-link" href="/register">Contact</a></li>
                 </ul>
-            </div>
         </div>
     </nav>
-    <!-- Info Section -->
-    <section id='info' style='text-align:center'>
-        <p>291 Kirkland Mail CTR • 95 Dunster St. • Cambridge, MA 02138 • onilsson@college.harvard.edu • (857) 757-8493</p>
-    </section>
 
-    <!-- Education -->
-    <section id='education'>
-        <h2 class='resume-head'>Education</h2>
-        <div>
-            <h5><b>Harvard University</b></h5>
-            <span><h6 style="float:right;">Cambridge, MA</h6></span>
-        </div>
-        <div>
-            <h6><i>Bachelor of Science, Mechanical Engineering, GPA: 3.86</i></h6>
-            <span style='float:right;'>Class of 2023</span>
-        </div>
-        <ul>
-            <li>Multivariable Calculus</li>
-            <li>Linear Algebra</li>
-            <li>Computer Aided Machine Design</li>
-            <li>Computing for Science and Engineering (Python)</li>
-            <li>Mechanical and Statistical Physics</li>
-            <li>Electromagnetism and Quantum Physics</li>
-            <li>Introduction to Computer Science</li>
-            <ul>
-                <li>Python</li>
-                <li>C</li>
-                <li>JavaScript</li>
-                <li>SQL</li>
+    <!-- Navbar Side from https://bootstrapious.com/p/bootstrap-sidebar-->
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar" class='navbar-light'>
+            <div class="sidebar-header">
+                <h3>Welcome to my portfolio</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <h2>Content</h2>
+                <li>
+                    <a href="/">About</a>
+                </li>
+                <li>
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Quick Examples</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="charts.html">Graphs/Plots</a>
+                        </li>
+                        <li>
+                            <a href="num.html">Numerical Solutions</a>
+                        </li>
+                        <li>
+                            <a href="web.html">Web Application</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Experience/Projects</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="happy.html">Happy Track</a>
+                        </li>
+                        <li>
+                            <a href="physics.html">Physics Project</a>
+                        </li>
+                        <li>
+                            <a href="finance.html">(CS50 – Finance)</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/nilsson-oskar/" target="_blank" style='color:#0f83d7;'>Linked In</a>
+                </li>
+                <li>
+                    <a href="resume.html">Resume</a>
+                </li>
             </ul>
-            <li>Materials Selection and Design</li>
-            <li>Seminar – Technology vs. Nature</li>
-            <li>The Climate-Energy Challenge</li>
-            <li>Expository writing – Humans, Nature, and the Environment</li>
-        </ul>
-        <br>
 
-        <div>
-            <h5><b>Celsiusskolan Uppsala</b></h5>
-            <span style='float:right;'><h6>Uppsala, Sweden</h6></span>
-        </div>
-        <div>
-            <h6><i>Scientific Program & Nationally approved Athletic Education, GPA: 4.0</i></h6>
-            <span style='float:right;'>June 2018</span>
-        </div>
-        <ul>
-            <li>Academic award in Math received at graduation</li>
-            <li>Thesis: “Water’s rate of cooling while stirring”</li>
-        </ul>
-    </section>
-    <hr>
+            <ul class="list-unstyled CTAs">
+                <li>
+                    <a href="https://github.com/ognilsson/ognilsson.github.io" class="download">Github Repository</a>
+                </li>
+                <li>
+                    <a href="contact.html" class="article">Contact</a>
+                </li>
+            </ul>
+        </nav>
 
-    <!--Work Experience-->
-    <section id='work'>
-        <h2 class='resume-head'>Work Experience</h2>
-        <div>
-            <h5><b>Mark Labs</b></h5>
-            <span style='float:right;'><h6>Washington, DC (Remote)</h6></span>
-        </div>
-        <div>
-            <p style='margin-bottom:0'><i>Fin. Tech startup focusing on sustainable investing</i></p>
-            <span style='float:right;'>May 2020 – August 2020</span>
-        </div>
-        <h6>Product- and Business Development Intern</h6>
-        <br>
-        <ul>
-            <li>Performed Life-Cycle Assessment on large composite decking company</li>
-            <li>Created and designed Low Carbon Economy (LCE) pitch decks, LCE white papers, and external hire instructions</li>
-            <li>Developed a word-frequency-count software for scanning documents for topics</li>
-        </ul>
-        <br>
-        <hr class='resume-break'>
+        <!-- Page Content  -->
+        <div id="content">
 
-        <div>
-            <h5><b>Robot Design Project</b></h5>
-            <span style='float:right;'><h6>Harvard College</h6></span>
-        </div>
-        <div>
-            <p style='margin-bottom:0'><i>Part of Computer Aided Machine Design curriculum </i></p>
-            <span style='float:right;'>January 2020 – May 2020</span>
-        </div>
-        <h6>Team member</h6>
-        <br>
-        <ul>
-            <li>Winner of the annual robot design competition</li>
-        </ul>
-        <br>
-        <hr class='resume-break'>
+            <nav>
+                <div class='container-fluid'>
 
-        <div>
-            <h5><b>Value Call AB</b></h5>
-            <span style='float:right;'><h6>Uppsala, Sweden</h6></span>
-        </div>
-        <div>
-            <p style='margin-bottom:0'><i>Telemarketing company focusing on real estate</i></p>
-            <span style='float:right;'>March 2019 – August 2019</span>
-        </div>
-        <h6>Salesman – Acquired new customers for multiple real estate agencies</h6>
-        <br>
-        <ul>
-            <li>Consistently exceeded sales quota of 0.5 sales/hour</li>
-            <li>Recognized for best sale of the month in March 2019</li>
-        </ul>
-        <br>
-        <hr class='resume-break'>
-
-        <div>
-            <h5><b>Sector Alarm Sverige</b></h5>
-            <span style='float:right;'><h6>Uppsala, Sweden</h6></span>
-        </div>
-        <div>
-            <p style='margin-bottom:0'><i>Company focusing on Home Alarm Systems</i></p>
-            <span style='float:right;'>August 2018 – November 2018</span>
-        </div>
-        <h6>Security consultant / Door-to-door Salesman</h6>
-        <br>
-        <ul>
-            <li>Developed persistence, approachability, and in person sales skills</li>
-            <li>Accomplished company milestone of 1 sale per day in October 2018</li>
-        </ul>
-        <hr>
-    </section>
-
-    <!--Athletic Experience-->
-    <section id='athletics'>
-        <h2 class='resume-head'>Athletic Experience</h2>
-         <div>
-            <h5><b>Harvard University</b></h5>
-            <span><h6 style="float:right;">Cambridge, MA</h6></span>
-        </div>
-        <div>
-            <h6><i>Starting Goalkeeper</i></h6>
-            <span style='float:right;'>Class of 2023</span>
-        </div>
-        <ul>
-            <li>Ranked 6th in saves per game among goalkeepers in NCAA D1, 1st in The Ivy Leagues</li>
-        </ul>
-        <br>
-        <hr class='resume-break'>
-
-        <div>
-            <span><h6 style="float:right;">Stockholm, Sweden</h6></span>
-            <h5><b>National Team Camps P-16 & P-17</b></h5>
-        </div>
-        <ul>
-            <li>Participated in 2 youth camps for Sweden’s “Future team” in soccer <span style='float:right;'>October 2015 & April 2016</span></li>
-        </ul>
-        <br>
-        <hr class='resume-break'>
-
-        <div>
-            <span><h6 style="float:right;">Uppsala, Sweden</h6></span>
-            <h5><b>IK Sirius FK</b></h5>
-        </div>
-        <ul>
-            <li>Awarded with academy player of the year 2017 <span style='float:right;'>January 2018</span></li>
-        </ul>
-        <br>
-        <hr>
-    </section>
-
-    <!--<section id='additional'>-->
-    <!--    <h2 class='resume-head'>Additional</h2>-->
-    <!--    <h6>Awards:</h6>-->
-    <!--    <p>Received an award for leadership upon graduation from Gottsundaskolan in 2015 </p>-->
-    <!--    <br>-->
-    <!--    <h6>Other Interests:</h6>-->
-    <!--    <ul>-->
-    <!--        <li>Travelling</li>-->
-    <!--        <li>New member of Harvard Engineers Without Borders</li>-->
-    <!--        <li>Engineering in developing communities</li>-->
-    <!--        <li>East African wildlife</li>-->
-    <!--        <li>Scuba diving</li>-->
-    <!--        <li>Italian cuisine</li>-->
-    <!--        <li>Skiing</li>-->
-    <!--    </ul>-->
-    <!--</section>-->
-
-    <section id='additional'>
-        <h2 class='resume-head'>Additional</h2>
-        <h6>Awards:</h6>
-        <p>Received an award for leadership upon graduation from Gottsundaskolan in 2015 </p>
-        <br>
-        <h6>Other Interests:</h6>
-        <br>
-        <div class='container'>
-            <div class="row text-center pad-bottom" data-scroll-reveal="enter from the bottom after 0.4s">
-                <div class="col-md-4">
-                        <img class='resume-img' id="service1" src="static/plane.png" alt="travelling">
-                        <h5>Travelling</h5>
+                    <button type="button" id="sidebarCollapse" class="btn btn-outline-info">
+                        <i class="fas fa-align-left"></i>
+                        <span>Toggle Sidebar</span>
+                    </button>
                 </div>
-                <div class="col-md-4">
-                    <img class='resume-img' id="service1" src="static/HEWB.png" alt="HEWB">
-                    <br>
-                    <h5>Harvard Engineers Without Borders</h5>
+            </nav>
+            <hr>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid resume">
+                    <h2>Oskar Nilsson</h2>
+
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#education">Education</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#work">Work Experience</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#athletics">Athletic Experience</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#additional">Additional</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <img class='resume-img' id="service1" src="static/lion.png" alt="Wildlife">
-                    <h5>East African Wildlife</h5>
+            </nav>
+            <!-- Info Section -->
+            <section id='info' style='text-align:center'>
+                <p>291 Kirkland Mail CTR • 95 Dunster St. • Cambridge, MA 02138 • onilsson@college.harvard.edu • (857) 757-8493</p>
+            </section>
+
+            <!-- Education -->
+            <section id='education'>
+                <h2 class='resume-head'>Education</h2>
+                <div>
+                    <h5><b>Harvard University</b></h5>
+                    <span><h6 style="float:right;">Cambridge, MA</h6></span>
                 </div>
-            </div>
+                <div>
+                    <h6><i>Bachelor of Science, Mechanical Engineering, GPA: 3.86</i></h6>
+                    <span style='float:right;'>Class of 2023</span>
+                </div>
+                <ul>
+                    <li>Multivariable Calculus</li>
+                    <li>Linear Algebra</li>
+                    <li>Computer Aided Machine Design</li>
+                    <li>Computing for Science and Engineering (Python)</li>
+                    <li>Mechanical and Statistical Physics</li>
+                    <li>Electromagnetism and Quantum Physics</li>
+                    <li>Introduction to Computer Science</li>
+                    <ul>
+                        <li>Python</li>
+                        <li>C</li>
+                        <li>JavaScript</li>
+                        <li>SQL</li>
+                    </ul>
+                    <li>Materials Selection and Design</li>
+                    <li>Seminar – Technology vs. Nature</li>
+                    <li>The Climate-Energy Challenge</li>
+                    <li>Expository writing – Humans, Nature, and the Environment</li>
+                </ul>
+                <br>
+
+                <div>
+                    <h5><b>Celsiusskolan Uppsala</b></h5>
+                    <span style='float:right;'><h6>Uppsala, Sweden</h6></span>
+                </div>
+                <div>
+                    <h6><i>Scientific Program & Nationally approved Athletic Education, GPA: 4.0</i></h6>
+                    <span style='float:right;'>June 2018</span>
+                </div>
+                <ul>
+                    <li>Academic award in Math received at graduation</li>
+                    <li>Thesis: “Water’s rate of cooling while stirring”</li>
+                </ul>
+            </section>
+            <hr>
+
+            <!--Work Experience-->
+            <section id='work'>
+                <h2 class='resume-head'>Work Experience</h2>
+                <div>
+                    <h5><b>Mark Labs</b></h5>
+                    <span style='float:right;'><h6>Washington, DC (Remote)</h6></span>
+                </div>
+                <div>
+                    <p style='margin-bottom:0'><i>Fin. Tech startup focusing on sustainable investing</i></p>
+                    <span style='float:right;'>May 2020 – August 2020</span>
+                </div>
+                <h6>Product- and Business Development Intern</h6>
+                <br>
+                <ul>
+                    <li>Performed Life-Cycle Assessment on large composite decking company</li>
+                    <li>Created and designed Low Carbon Economy (LCE) pitch decks, LCE white papers, and external hire instructions</li>
+                    <li>Developed a word-frequency-count software for scanning documents for topics</li>
+                </ul>
+                <br>
+                <hr class='resume-break'>
+
+                <div>
+                    <h5><b>Robot Design Project</b></h5>
+                    <span style='float:right;'><h6>Harvard College</h6></span>
+                </div>
+                <div>
+                    <p style='margin-bottom:0'><i>Part of Computer Aided Machine Design curriculum </i></p>
+                    <span style='float:right;'>January 2020 – May 2020</span>
+                </div>
+                <h6>Team member</h6>
+                <br>
+                <ul>
+                    <li>Winner of the annual robot design competition</li>
+                </ul>
+                <br>
+                <hr class='resume-break'>
+
+                <div>
+                    <h5><b>Value Call AB</b></h5>
+                    <span style='float:right;'><h6>Uppsala, Sweden</h6></span>
+                </div>
+                <div>
+                    <p style='margin-bottom:0'><i>Telemarketing company focusing on real estate</i></p>
+                    <span style='float:right;'>March 2019 – August 2019</span>
+                </div>
+                <h6>Salesman – Acquired new customers for multiple real estate agencies</h6>
+                <br>
+                <ul>
+                    <li>Consistently exceeded sales quota of 0.5 sales/hour</li>
+                    <li>Recognized for best sale of the month in March 2019</li>
+                </ul>
+                <br>
+                <hr class='resume-break'>
+
+                <div>
+                    <h5><b>Sector Alarm Sverige</b></h5>
+                    <span style='float:right;'><h6>Uppsala, Sweden</h6></span>
+                </div>
+                <div>
+                    <p style='margin-bottom:0'><i>Company focusing on Home Alarm Systems</i></p>
+                    <span style='float:right;'>August 2018 – November 2018</span>
+                </div>
+                <h6>Security consultant / Door-to-door Salesman</h6>
+                <br>
+                <ul>
+                    <li>Developed persistence, approachability, and in person sales skills</li>
+                    <li>Accomplished company milestone of 1 sale per day in October 2018</li>
+                </ul>
+                <hr>
+            </section>
+
+            <!--Athletic Experience-->
+            <section id='athletics'>
+                <h2 class='resume-head'>Athletic Experience</h2>
+                 <div>
+                    <h5><b>Harvard University</b></h5>
+                    <span><h6 style="float:right;">Cambridge, MA</h6></span>
+                </div>
+                <div>
+                    <h6><i>Starting Goalkeeper</i></h6>
+                    <span style='float:right;'>Class of 2023</span>
+                </div>
+                <ul>
+                    <li>Ranked 6th in saves per game among goalkeepers in NCAA D1, 1st in The Ivy Leagues</li>
+                </ul>
+                <br>
+                <hr class='resume-break'>
+
+                <div>
+                    <span><h6 style="float:right;">Stockholm, Sweden</h6></span>
+                    <h5><b>National Team Camps P-16 & P-17</b></h5>
+                </div>
+                <ul>
+                    <li>Participated in 2 youth camps for Sweden’s “Future team” in soccer <span style='float:right;'>October 2015 & April 2016</span></li>
+                </ul>
+                <br>
+                <hr class='resume-break'>
+
+                <div>
+                    <span><h6 style="float:right;">Uppsala, Sweden</h6></span>
+                    <h5><b>IK Sirius FK</b></h5>
+                </div>
+                <ul>
+                    <li>Awarded with academy player of the year 2017 <span style='float:right;'>January 2018</span></li>
+                </ul>
+                <br>
+                <hr>
+            </section>
+
+            <!--<section id='additional'>-->
+            <!--    <h2 class='resume-head'>Additional</h2>-->
+            <!--    <h6>Awards:</h6>-->
+            <!--    <p>Received an award for leadership upon graduation from Gottsundaskolan in 2015 </p>-->
+            <!--    <br>-->
+            <!--    <h6>Other Interests:</h6>-->
+            <!--    <ul>-->
+            <!--        <li>Travelling</li>-->
+            <!--        <li>New member of Harvard Engineers Without Borders</li>-->
+            <!--        <li>Engineering in developing communities</li>-->
+            <!--        <li>East African wildlife</li>-->
+            <!--        <li>Scuba diving</li>-->
+            <!--        <li>Italian cuisine</li>-->
+            <!--        <li>Skiing</li>-->
+            <!--    </ul>-->
+            <!--</section>-->
+
+            <section id='additional'>
+                <h2 class='resume-head'>Additional</h2>
+                <h6>Awards:</h6>
+                <p>Received an award for leadership upon graduation from Gottsundaskolan in 2015 </p>
+                <br>
+                <h6>Other Interests:</h6>
+                <br>
+                <div class='container'>
+                    <div class="row text-center pad-bottom" data-scroll-reveal="enter from the bottom after 0.4s">
+                        <div class="col-md-4">
+                                <img class='resume-img' id="service1" src="static/plane.png" alt="travelling">
+                                <h5>Travelling</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <img class='resume-img' id="service1" src="static/HEWB.png" alt="HEWB">
+                            <br>
+                            <h5>Harvard Engineers Without Borders</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <img class='resume-img' id="service1" src="static/lion.png" alt="Wildlife">
+                            <h5>East African Wildlife</h5>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class='container'>
+                    <div class="row text-center pad-bottom" data-scroll-reveal="enter from the bottom after 0.4s">
+                        <div class="col-md-4">
+                                <img class='resume-img' id="service1" src="static/dive.png" alt="Scuba Diving">
+                                <h5>Scuba Diving</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <img class='resume-img' id="service1" src="static/pasta.png" alt="Italian cuisine">
+                            <h5>Italian Cuisine</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <img class='resume-img' id="service1" src="static/skii.png" alt="Skiing">
+                            <h5>Skiing</h5>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-        <br>
-        <div class='container'>
-            <div class="row text-center pad-bottom" data-scroll-reveal="enter from the bottom after 0.4s">
-                <div class="col-md-4">
-                        <img class='resume-img' id="service1" src="static/dive.png" alt="Scuba Diving">
-                        <h5>Scuba Diving</h5>
-                </div>
-                <div class="col-md-4">
-                    <img class='resume-img' id="service1" src="static/pasta.png" alt="Italian cuisine">
-                    <h5>Italian Cuisine</h5>
-                </div>
-                <div class="col-md-4">
-                    <img class='resume-img' id="service1" src="static/skii.png" alt="Skiing">
-                    <h5>Skiing</h5>
-                </div>
-            </div>
-        </div>
-    </section>
-{% endblock %}
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar, #content').toggleClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+    </script>
+</body>
+
+</html>
