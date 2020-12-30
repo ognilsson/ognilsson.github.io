@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Oskar – CS50 Finance
+{% endblock %}
+
+{% block main %}
+<h2>CS50 – Finance</h2>
+<div class="col-md-10">
+    <p>
+        Python and SQL based web- app that simulates querying real stock prices through an API as well as allowing registered users to buy and sell stocks.
+        The application also includes a History table showing all previous transactions and a table with the user's current balance and portfolio.
+        Accounts are protected by preventing SQL injection and only storing cashed passwords.
+    </p>
+    <p>**Part of CS50 Curriculum**</p>
+</div>
+<br>
+<div class='container'>
+    <div class="col-md-8 text-center">
+        <h5>Homepage</h5>
+        <img class='example' id="service1" src="static/fin.png" alt="chart">
+    </div>
+</div>
+<hr><br>
+<div class='container'>
+    <div class="col-md-8 text-center">
+        <h5>Balance and Portfolio Page</h5>
+        <img class='example' id="service1" src="static/cash.png" alt="chart">
+    </div>
+</div>
+<hr><br>
+<div class='container'>
+    <div class="col-md-8 text-center">
+        <h5>Buy page</h5>
+        <img class='example' id="service1" src="static/buy.png" alt="chart">
+    </div>
+</div>
+<hr><br>
+<div class='container'>
+    <div class="col-md-8 text-center">
+        <h5>Quote page</h5>
+        <img class='example' id="service1" src="static/quote.png" alt="chart">
+        <img class='example' id="service1" src="static/quoted.png" alt="chart">
+    </div>
+</div>
+<hr><br>
+{% endblock %}
