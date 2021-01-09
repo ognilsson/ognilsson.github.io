@@ -126,9 +126,9 @@
                     <!--</div>-->
                 </div>
             </nav>
-            <hr>
+            <hr style='border-top: 2px solid #17A2B8;width:90%;'>
             <div>
-                <h1 class='display-4 text-center'>Hi, my name is Oskar</h1>
+                <h1 class='display-4 text-center'>About me</h1>
             </div>
             <br>
             <img class='center profile' src='static/Oskar.jpg'>
@@ -139,7 +139,7 @@
                 <div class='row' style='align-items: flex-start'>
                     <div class="col-lg-4 ml-auto">
                         <p class='lead'>
-                            I'm a sophomore at Harvard University pursuing a BS degree in Mechanical Engineering and I'm also interested in
+                            My name is Oskar and I'm a sophomore at Harvard University pursuing a BS degree in Mechanical Engineering and I'm also interested in
                             Physics, Computer Science, and Environmental Engineering.
                             I'm originally from Uppsala, Sweden, where I've lived my whole life until moving to the US for college.
                             One of my favorite extracurricular activities is playing Soccer. I play as a goalkeeper and am a member of Harvard Men's Soccer Varsity team.
@@ -183,6 +183,31 @@
                 $('a[aria-expanded=true]').attr('aria-expanded', 'false');
             });
         });
+    </script>
+    <script>
+        var myScrollFunc = function() {
+          var h = window.innerHeight;
+          var y = window.scrollY + h;
+          var elements = document.getElementsByTagName("hr");
+
+          for (var i = 0; i < elements.length; i++) {
+            var offs = elements[i].offsetTop;
+            if (y >= offs) {
+              let diff = (offs) * 100 / (y);
+              //let diff = 50 + Math.abs((y - offs)/h);
+              if (diff > 50) {
+                elements[i].style.width = String(diff + '%');
+              } else {
+                  new_diff = 100 - diff;
+                  elements[i].style.width = String(new_diff + '%');
+                }
+            } else {
+                elements[i].style.width = '100%';
+              }
+          }
+        };
+
+        window.addEventListener("scroll", myScrollFunc);
     </script>
 </body>
 

@@ -183,7 +183,7 @@
                     <li>Thesis: “Water’s rate of cooling while stirring”</li>
                 </ul>
             </section>
-            <hr>
+            <hr class='resume-break'>
 
             <!--Work Experience-->
             <section id='work'>
@@ -203,8 +203,8 @@
                     <li>Created and designed Low Carbon Economy (LCE) pitch decks, LCE white papers, and external hire instructions</li>
                     <li>Developed a word-frequency-count software for scanning documents for topics</li>
                 </ul>
+                <hr>
                 <br>
-                <hr class='resume-break'>
 
                 <div>
                     <h5><b>Robot Design Project</b></h5>
@@ -219,8 +219,8 @@
                 <ul>
                     <li>Winner of the annual robot design competition</li>
                 </ul>
+                <hr>
                 <br>
-                <hr class='resume-break'>
 
                 <div>
                     <h5><b>Value Call AB</b></h5>
@@ -236,8 +236,8 @@
                     <li>Consistently exceeded sales quota of 0.5 sales/hour</li>
                     <li>Recognized for best sale of the month in March 2019</li>
                 </ul>
+                <hr>
                 <br>
-                <hr class='resume-break'>
 
                 <div>
                     <h5><b>Sector Alarm Sverige</b></h5>
@@ -253,7 +253,7 @@
                     <li>Developed persistence, approachability, and in person sales skills</li>
                     <li>Accomplished company milestone of 1 sale per day in October 2018</li>
                 </ul>
-                <hr>
+                <hr class='resume-break'>
             </section>
 
             <!--Athletic Experience-->
@@ -270,8 +270,8 @@
                 <ul>
                     <li>Ranked 6th in saves per game among goalkeepers in NCAA D1, 1st in The Ivy Leagues</li>
                 </ul>
+                <hr>
                 <br>
-                <hr class='resume-break'>
 
                 <div>
                     <span><h6 style="float:right;">Stockholm, Sweden</h6></span>
@@ -280,8 +280,8 @@
                 <ul>
                     <li>Participated in 2 youth camps for Sweden’s “Future team” in soccer <span style='float:right;'>October 2015 & April 2016</span></li>
                 </ul>
+                <hr>
                 <br>
-                <hr class='resume-break'>
 
                 <div>
                     <span><h6 style="float:right;">Uppsala, Sweden</h6></span>
@@ -291,7 +291,7 @@
                     <li>Awarded with academy player of the year 2017 <span style='float:right;'>January 2018</span></li>
                 </ul>
                 <br>
-                <hr>
+                <hr class='resume-break'>
             </section>
 
             <!--<section id='additional'>-->
@@ -377,6 +377,31 @@
                 $('a[aria-expanded=true]').attr('aria-expanded', 'false');
             });
         });
+    </script>
+    <script>
+        var myScrollFunc = function() {
+          var h = window.innerHeight;
+          var y = window.scrollY + h;
+          var elements = document.getElementsByTagName("hr");
+
+          for (var i = 0; i < elements.length; i++) {
+            var offs = elements[i].offsetTop;
+            if (y >= offs) {
+              let diff = (offs) * 100 / (y);
+              //let diff = 50 + Math.abs((y - offs)/h);
+              if (diff > 50) {
+                elements[i].style.width = String(diff + '%');
+              } else {
+                  new_diff = 100 - diff;
+                  elements[i].style.width = String(new_diff + '%');
+                }
+            } else {
+                elements[i].style.width = '100%';
+              }
+          }
+        };
+
+        window.addEventListener("scroll", myScrollFunc);
     </script>
 </body>
 

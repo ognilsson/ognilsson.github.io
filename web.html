@@ -165,6 +165,31 @@
             });
         });
     </script>
+    <script>
+        var myScrollFunc = function() {
+          var h = window.innerHeight;
+          var y = window.scrollY + h;
+          var elements = document.getElementsByTagName("hr");
+
+          for (var i = 0; i < elements.length; i++) {
+            var offs = elements[i].offsetTop;
+            if (y >= offs) {
+              let diff = (offs) * 100 / (y);
+              //let diff = 50 + Math.abs((y - offs)/h);
+              if (diff > 50) {
+                elements[i].style.width = String(diff + '%');
+              } else {
+                  new_diff = 100 - diff;
+                  elements[i].style.width = String(new_diff + '%');
+                }
+            } else {
+                elements[i].style.width = '100%';
+              }
+          }
+        };
+
+        window.addEventListener("scroll", myScrollFunc);
+    </script>
 </body>
 
 </html>
